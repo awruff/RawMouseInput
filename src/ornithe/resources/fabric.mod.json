@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "rawinput",
+  "version": "1.0.0",
+  "name": "Raw Input",
+  "authors": [
+    "awruff"
+  ],
+  "contact": {
+    "homepage": "https://discord.gg/gGuQ55PCRn",
+    "sources": "https://github.com/awruff/RawMouseInput"
+  },
+  "license": "GPL-3.0",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.github.awruff.rawinput.RawInputOrnithe"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "1.8.9"
+  }
+}
