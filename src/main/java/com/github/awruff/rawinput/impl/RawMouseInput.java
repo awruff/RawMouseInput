@@ -20,6 +20,8 @@ public class RawMouseInput extends MouseInput {
 
     @Override
     public void tick() {
+        dx = dy = 0;
+
         if (!mice.isEmpty()) {
             mice.forEach(it -> {
                 if (!it.poll()) refresh();
