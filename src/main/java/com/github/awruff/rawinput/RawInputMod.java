@@ -22,7 +22,7 @@ public class RawInputMod {
                 environment = "DirectInputEnvironmentPlugin";
             }
 
-            Minecraft.getInstance().mouse = new RawMouseInput();
+            Minecraft.getMinecraft().mouseHelper = new RawMouseInput();
         }
     }
 }

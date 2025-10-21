@@ -10,4 +10,15 @@ pluginManagement {
     }
 }
 
-rootProject.name = "RawInput"
+plugins {
+    id("dev.kikugie.stonecutter") version "0.7.5"
+}
+
+rootProject.name = extra["mod.name"].toString()
+
+stonecutter {
+    create(rootProject) {
+        versions("1.7.10", "1.8.9", "1.12.2")
+        vcsVersion = "1.7.10"
+    }
+}

@@ -3,13 +3,13 @@ package com.github.awruff.rawinput.impl;
 import com.github.awruff.rawinput.RawInputMod;
 import net.java.games.input.ControllerEnvironment;
 import net.java.games.input.Mouse;
-import net.minecraft.client.input.MouseInput;
+import net.minecraft.util.MouseHelper;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RawMouseInput extends MouseInput {
+public class RawMouseInput extends MouseHelper {
     private int fails = 0;
 
     private final List<Mouse> mice = new ArrayList<>();
@@ -19,18 +19,18 @@ public class RawMouseInput extends MouseInput {
     }
 
     @Override
-    public void tick() {
-        dx = dy = 0;
+    public void mouseXYChange() {
+        deltaX = deltaY = 0;
 
         if (!mice.isEmpty()) {
             mice.forEach(it -> {
                 if (!it.poll()) refresh();
 
-                dx += (int) it.getX().getPollData();
-                dy -= (int) it.getY().getPollData();
+                deltaX += (int) it.getX().getPollData();
+                deltaY -= (int) it.getY().getPollData();
             });
 
-            boolean movement = (dx != 0 || dy != 0);
+            boolean movement = (deltaX != 0 || deltaY != 0);
 
             if (!(Math.abs(getDX()) <= 5 && Math.abs(getDY()) <= 5 || movement)) {
                 if (fails++ > 5) refresh();

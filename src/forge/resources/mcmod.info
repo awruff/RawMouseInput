@@ -2,8 +2,8 @@
   {
     "modid": "rawinput",
     "name": "Raw Input",
-    "version": "1.0.0",
-    "mcversion": "1.8.9",
+    "version": "1.1.0",
+    "mcversion": "${minecraft}",
     "url": "https://github.com/awruff/RawMouseInput",
     "authorList": [
       "awruff"

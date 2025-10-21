@@ -7,4 +7,4 @@ Unpublished & Untested... I'm still running Linux. Contact me on Discord (@awruf
 ## Supported Platforms
 - Fabric
 - Forge
-- Feather
+- Ornithe
