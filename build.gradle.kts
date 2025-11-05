@@ -4,16 +4,21 @@ plugins {
 }
 
 group = "com.github.awruff.rawinput"
-version = "1.0.0"
+version = "1.0.1"
 
 unimined.useGlobalCache = false
 
 val forge by sourceSets.creating
 val fabric by sourceSets.creating
-val ornithe by sourceSets.creating
+
+val ornithe by sourceSets.creating {
+    compileClasspath += fabric.compileClasspath
+    runtimeClasspath += fabric.runtimeClasspath
+}
 
 unimined.minecraft {
     version("1.8.9")
+    side("client")
 
     mappings {
         calamus()
@@ -46,7 +51,7 @@ unimined.minecraft(fabric) {
     combineWith(sourceSets.main.get())
 
     legacyFabric {
-        loader("0.16.13")
+        loader("0.17.3")
     }
 
     defaultRemapJar = true
@@ -56,8 +61,14 @@ unimined.minecraft(ornithe) {
     combineWith(sourceSets.main.get())
 
     ornitheFabric {
-        loader("0.17.2")
+        loader("0.17.3")
     }
 
     defaultRemapJar = true
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(8))
+    }
 }

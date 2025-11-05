@@ -1,10 +1,10 @@
 ## Raw Mouse Input
 
-Unpublished & Untested... I'm still running Linux. Contact me on Discord (@awruff) if you want to test for me. (Windows 10+)
+Directly processes mouse input for improved precision.
 
 ---
 
 ## Supported Platforms
-- Fabric
-- Forge
-- Feather
+- Ornithe (1.8.9)
+- Forge (1.8.9)
+- Fabric (1.8.9)
