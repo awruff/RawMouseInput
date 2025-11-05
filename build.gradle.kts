@@ -8,13 +8,10 @@ version = "1.0.1"
 
 unimined.useGlobalCache = false
 
+val main = sourceSets.main.get()
 val forge by sourceSets.creating
 val fabric by sourceSets.creating
-
-val ornithe by sourceSets.creating {
-    compileClasspath += fabric.compileClasspath
-    runtimeClasspath += fabric.runtimeClasspath
-}
+val ornithe by sourceSets.creating
 
 unimined.minecraft {
     version("1.8.9")
@@ -38,7 +35,7 @@ unimined.minecraft {
 }
 
 unimined.minecraft(forge) {
-    combineWith(sourceSets.main.get())
+    combineWith(main)
 
     minecraftForge {
         loader("11.15.1.2318-1.8.9")
@@ -48,7 +45,7 @@ unimined.minecraft(forge) {
 }
 
 unimined.minecraft(fabric) {
-    combineWith(sourceSets.main.get())
+    combineWith(main)
 
     legacyFabric {
         loader("0.17.3")
@@ -58,7 +55,7 @@ unimined.minecraft(fabric) {
 }
 
 unimined.minecraft(ornithe) {
-    combineWith(sourceSets.main.get())
+    combineWith(fabric)
 
     ornitheFabric {
         loader("0.17.3")
