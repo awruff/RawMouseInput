@@ -16,7 +16,7 @@
     "client": [
       {
         "adapter": "kotlin",
-        "value": "com.github.awruff.rawinput.RawInputMod"
+        "value": "com.github.awruff.rawinput.RawInputFabric"
       }
     ]
   },

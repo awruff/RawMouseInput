@@ -2,13 +2,12 @@ package com.github.awruff.rawinput
 
 import com.github.awruff.rawinput.impl.RawMouseInput
 import com.github.awruff.rawinput.utils.LibraryChecker
-import net.fabricmc.api.ClientModInitializer
 import net.minecraft.client.Minecraft
 import org.apache.commons.lang3.SystemUtils
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 
-object RawInputMod : ClientModInitializer {
+object RawInputMod {
     const val ID = "rawinput"
     const val NAME = "Raw Input"
     const val VERSION = "1.1.0"
@@ -26,7 +25,7 @@ object RawInputMod : ClientModInitializer {
         }
     }
 
-    override fun onInitializeClient() {
+    fun initialize() {
         LOGGER.info("Initializing {} v{} (id={})", NAME, VERSION, ID)
 
         if (environment.isNotEmpty()) {
