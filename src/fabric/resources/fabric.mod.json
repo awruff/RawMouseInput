@@ -3,6 +3,7 @@
   "id": "rawinput",
   "version": "1.1.0",
   "name": "Raw Input",
+  "icon": "assets/rawinput/icon.png",
   "authors": [
     "awruff"
   ],
