@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger
 object RawInputMod : ClientModInitializer {
     const val ID = "rawinput"
     const val NAME = "Raw Input"
-    const val VERSION = "1.0.1"
+    const val VERSION = "1.1.0"
 
     private val LOGGER: Logger = LogManager.getLogger(NAME)
 

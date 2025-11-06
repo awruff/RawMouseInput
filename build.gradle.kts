@@ -5,12 +5,12 @@ plugins {
 }
 
 group = "com.github.awruff.rawinput"
-version = "1.0.1"
+version = "1.1.0"
 
 unimined.useGlobalCache = false
 
 unimined.minecraft {
-    version("1.8.9")
+    version("1.7.2")
     side("client")
 
     mappings {
