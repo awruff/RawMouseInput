@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "rawinput",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "Raw Input",
   "authors": [
     "awruff"
@@ -14,11 +14,15 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "com.github.awruff.rawinput.RawInputFabric"
+      {
+        "adapter": "kotlin",
+        "value": "com.github.awruff.rawinput.RawInputMod"
+      }
     ]
   },
   "depends": {
     "fabricloader": ">=0.16.13",
+    "fabric-language-kotlin": ">=1.13.7+kotlin.2.2.21",
     "minecraft": "1.8.9"
   }
 }

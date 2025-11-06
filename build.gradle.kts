@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    kotlin("jvm") version ("2.2.21")
     id("xyz.wagyourtail.unimined") version ("1.4.1")
 }
 
@@ -8,11 +9,6 @@ version = "1.0.1"
 
 unimined.useGlobalCache = false
 
-val main = sourceSets.main.get()
-val forge by sourceSets.creating
-val fabric by sourceSets.creating
-val ornithe by sourceSets.creating
-
 unimined.minecraft {
     version("1.8.9")
     side("client")
@@ -20,52 +16,13 @@ unimined.minecraft {
     mappings {
         calamus()
         feather(28)
-
-        stubs("searge", "feather") {
-            c("net/minecraft/entity/item/EntityMinecart") {
-                m("func_174898_m;()D", "getMaxSpeedVanilla")
-            }
-            c(null, "net/minecraft/util/registry/IdRegistry") {
-                m("func_148757_b;(Ljava/lang/Object;)I", "getByValue")
-            }
-        }
     }
-
-    defaultRemapJar = false
-}
-
-unimined.minecraft(forge) {
-    combineWith(main)
-
-    minecraftForge {
-        loader("11.15.1.2318-1.8.9")
-    }
-
-    defaultRemapJar = true
-}
-
-unimined.minecraft(fabric) {
-    combineWith(main)
-
-    legacyFabric {
-        loader("0.17.3")
-    }
-
-    defaultRemapJar = true
-}
-
-unimined.minecraft(ornithe) {
-    combineWith(fabric)
 
     ornitheFabric {
         loader("0.17.3")
     }
-
-    defaultRemapJar = true
 }
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
-    }
+dependencies {
+    "modImplementation"("net.fabricmc:fabric-language-kotlin:1.13.7+kotlin.2.2.21")
 }
