@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.github.awruff.rawinput"
-version = "1.1.0"
+version = "1.1.1"
 
 unimined.useGlobalCache = false
 
@@ -35,7 +35,7 @@ unimined.minecraft(fabric) {
 }
 
 unimined.minecraft(ornithe) {
-    combineWith(main)
+    combineWith(fabric)
 
     ornitheFabric {
         loader("0.17.3")
